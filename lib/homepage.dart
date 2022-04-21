@@ -1,4 +1,5 @@
 import 'package:cubit_to_cubit_communication/cubits/color/color_cubit.dart';
+import 'package:cubit_to_cubit_communication/cubits/counter/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +18,9 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<ColorCubit>().changeColor();
+              },
               child: const Text(
                 "Change Color",
                 style: TextStyle(fontSize: 24),
@@ -26,9 +29,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              "0",
-              style: TextStyle(
+            Text(
+              "${context.watch<CounterCubit>().state.counter}",
+              style: const TextStyle(
                   fontSize: 52,
                   fontWeight: FontWeight.bold,
                   color: Colors.deepOrange),
@@ -37,7 +40,9 @@ class HomePage extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.read<CounterCubit>().changeCounter();
+              },
               child: const Text(
                 "Increase Counter",
                 style: TextStyle(fontSize: 24),
