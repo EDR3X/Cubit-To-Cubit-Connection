@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Cubit to Cubit Communication",
         theme: ThemeData(primarySwatch: Colors.green),
-        home: HomePage(),
+        home: const HomePage(),
       ),
     );
   }
