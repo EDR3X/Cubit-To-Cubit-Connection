@@ -20,6 +20,8 @@ class CounterCubit extends Cubit<CounterState> {
         incrementSize = 1;
       } else if (colorState.color == Colors.green) {
         incrementSize = 10;
+      } else if (colorState.color == Colors.blue) {
+        incrementSize = 50;
       } else if (colorState.color == Colors.black) {
         emit(state.copyWith(counter: state.counter - 100));
         incrementSize = -100;
